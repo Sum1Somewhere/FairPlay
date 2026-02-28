@@ -823,7 +823,7 @@ function StarRating({
   );
 }
 
-function RatingBar({ label, value, icon }) {
+function RatingBar({ label, value, icon }: { label: string, value: number, icon: string }) {
   return (
     <div style={{ marginBottom: 8 }}>
       <div
@@ -854,7 +854,7 @@ function RatingBar({ label, value, icon }) {
     </div>
   );
 }
-function ProgramCard({ program, onClick }) {
+function ProgramCard({ program, onClick }: { program: any, onClick: (p: any) => void }) {
   const isPending = program.status === "pending";
   const overallColor = !program.overallRating
     ? "#9CA3AF"
@@ -1112,7 +1112,7 @@ function ProgramCard({ program, onClick }) {
     </div>
   );
 }
-function ReviewCard({ review }) {
+function ReviewCard({ review }: { review: any }) {
   return (
     <div
       style={{
@@ -1197,7 +1197,7 @@ function ReviewCard({ review }) {
   );
 }
 
-function WriteReviewModal({ program, onClose, onSubmit }) {
+function WriteReviewModal({ program, onClose, onSubmit }: { program: any, onClose: () => void, onSubmit: (data: any) => void }) {
   const [step, setStep] = useState(1);
   const [role, setRole] = useState("Parent");
   const [ratings, setRatings] = useState({});
@@ -1606,7 +1606,7 @@ function WriteReviewModal({ program, onClose, onSubmit }) {
   );
 }
 
-function ProgramDetail({ program, reviews, onBack, onReview }) {
+function ProgramDetail({ program, reviews, onBack, onReview }: { program: any, reviews: any[], onBack: () => void, onReview: () => void }) {
   const [showAllRatings, setShowAllRatings] = useState(false);
   const programReviews = reviews.filter((r) => r.programId === program.id);
   const isPending = program.status === "pending";
@@ -2115,7 +2115,7 @@ function ProgramDetail({ program, reviews, onBack, onReview }) {
     </div>
   );
 }
-function TrainerCard({ trainer, onClick }) {
+function TrainerCard({ trainer, onClick }: { trainer: any, onClick: (t: any) => void }) {
   const ratingColor =
     trainer.overallRating >= 4.7
       ? "#10B981"
@@ -2333,7 +2333,7 @@ function TrainerCard({ trainer, onClick }) {
   );
 }
 
-function TrainerDetail({ trainer, reviews, onBack }) {
+function TrainerDetail({ trainer, reviews, onBack }: { trainer: any, reviews: any[], onBack: () => void }) {
   const trainerReviews = reviews.filter((r) => r.trainerId === trainer.id);
   return (
     <div>
@@ -2738,7 +2738,7 @@ function TrainerDetail({ trainer, reviews, onBack }) {
     </div>
   );
 }
-function AddProgramModal({ onClose, onSubmit }) {
+function AddProgramModal({ onClose, onSubmit }: { onClose: () => void, onSubmit: (data: any) => void }) {
   const [step, setStep] = useState(1);
   const [tab, setTab] = useState("parent");
   const [form, setForm] = useState({

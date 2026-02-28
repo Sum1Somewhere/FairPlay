@@ -55,28 +55,10 @@ const RATING_CATEGORIES = [
     desc: "Skill-building, feedback, growth",
   },
   {
-    id: "fun_factor",
-    label: "Fun Factor",
-    icon: "😄",
-    desc: "Enjoyment, camaraderie, memories",
-  },
-  {
     id: "value",
     label: "Value for Money",
     icon: "💰",
     desc: "Cost vs. quality and experience",
-  },
-  {
-    id: "organization",
-    label: "Organization",
-    icon: "📋",
-    desc: "Scheduling, communication, admin",
-  },
-  {
-    id: "team_culture",
-    label: "Team Culture",
-    icon: "🤝",
-    desc: "Atmosphere, sportsmanship, inclusivity",
   },
   {
     id: "facilities",

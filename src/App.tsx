@@ -799,7 +799,7 @@ function StarRating({
         <button
           key={star}
           className={`${sizes[size]} transition-transform hover:scale-110 ${
-            onChange !== undefined ? "cursor-pointer" : "cursor-default"
+          onChange !== undefined ? "cursor-pointer" : "cursor-default"
           }`}
           style={{
             color: (hover || value) >= star ? "#F59E0B" : "#D1D5DB",

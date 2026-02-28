@@ -4000,7 +4000,6 @@ export default function App() {
     setToast(msg);
     setTimeout(() => setToast(null), 3000);
   };
-
   const handleReviewSubmit = (data) => {
     const newReview = {
       id: reviews.length + 1,
@@ -5078,7 +5077,7 @@ export default function App() {
       >
         <div style={{ marginBottom: 8 }}>
           <img
-            ssrc="https://i.imgur.com/9zwYUWm.png"
+            src="https://i.imgur.com/9zwYUWm.png"
             alt="Trophy"
             style={{ height: 30, width: "auto", objectFit: "contain" }}
           />

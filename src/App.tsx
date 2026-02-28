@@ -807,9 +807,9 @@ function StarRating({
             border: "none",
             padding: 0,
           }}
-          onMouseEnter={() => onChange && setHover(star)}
-          onMouseLeave={() => onChange && setHover(0)}
-          onClick={() => onChange && onChange(star)}
+          onMouseEnter={() => onChange !== undefined && setHover(star)}
+          onMouseLeave={() => onChange !== undefined && setHover(0)}
+          onClick={() => onChange !== undefined && onChange(star)}
         >
           ★
         </button>

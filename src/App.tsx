@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const SPORTS = [
   "Baseball",
@@ -81,7 +81,6 @@ const YES_NO_CATEGORIES = [
 ];
 
 const SAMPLE_PROGRAMS = [
-
   // ── BASEBALL (20 LI Orgs) ────────────────────────────────────────────────
 
   {
@@ -93,7 +92,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Westbury, NY",
-    description: "One of the most respected travel baseball programs on Long Island. Elite-level competition with a serious commitment to college placement and player development.",
+    description:
+      "One of the most respected travel baseball programs on Long Island. Elite-level competition with a serious commitment to college placement and player development.",
     overallRating: 4.8,
     totalReviews: 92,
     ratings: {
@@ -123,7 +123,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Westbury, NY",
-    description: "Boutique elite program focused on the youngest age groups. Known for high-quality instruction and a competitive but developmentally focused environment for 9U–11U players.",
+    description:
+      "Boutique elite program focused on the youngest age groups. Known for high-quality instruction and a competitive but developmentally focused environment for 9U–11U players.",
     overallRating: 4.6,
     totalReviews: 38,
     ratings: {
@@ -153,7 +154,8 @@ const SAMPLE_PROGRAMS = [
     travel: "National Travel",
     priceTier: "$$$$ ($3000+/yr)",
     location: "Dix Hills, NY",
-    description: "BEAST fields nationally competitive teams out of Suffolk County. Known for high-level tournaments and a coaching staff with professional and collegiate backgrounds.",
+    description:
+      "BEAST fields nationally competitive teams out of Suffolk County. Known for high-level tournaments and a coaching staff with professional and collegiate backgrounds.",
     overallRating: 4.7,
     totalReviews: 74,
     ratings: {
@@ -183,7 +185,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "West Hempstead, NY",
-    description: "Storm Baseball is a Nassau County staple with multiple competitive teams across age groups. Storm Black is the flagship travel squad with a strong tournament record.",
+    description:
+      "Storm Baseball is a Nassau County staple with multiple competitive teams across age groups. Storm Black is the flagship travel squad with a strong tournament record.",
     overallRating: 4.5,
     totalReviews: 61,
     ratings: {
@@ -213,7 +216,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$ ($500–$1500/yr)",
     location: "New Hyde Park, NY",
-    description: "Focused on middle and high school prep players looking to compete at the next level. Strong emphasis on individual skill development alongside team competition.",
+    description:
+      "Focused on middle and high school prep players looking to compete at the next level. Strong emphasis on individual skill development alongside team competition.",
     overallRating: 4.4,
     totalReviews: 47,
     ratings: {
@@ -243,7 +247,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Bethpage, NY",
-    description: "Large program with teams from 7U through 17U select showcase. One of the biggest organizations on LI by roster size, with a tiered competitive structure.",
+    description:
+      "Large program with teams from 7U through 17U select showcase. One of the biggest organizations on LI by roster size, with a tiered competitive structure.",
     overallRating: 4.3,
     totalReviews: 83,
     ratings: {
@@ -273,7 +278,8 @@ const SAMPLE_PROGRAMS = [
     travel: "National Travel",
     priceTier: "$$$$ ($3000+/yr)",
     location: "Holbrook, NY",
-    description: "Elite travel program known for specialized training and a serious approach to player advancement. Ghost fields highly competitive teams in USSSA and Perfect Game tournaments.",
+    description:
+      "Elite travel program known for specialized training and a serious approach to player advancement. Ghost fields highly competitive teams in USSSA and Perfect Game tournaments.",
     overallRating: 4.7,
     totalReviews: 44,
     ratings: {
@@ -303,7 +309,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Nesconset, NY",
-    description: "Competitive 8U–14U program with a strong showing at USSSA qualifiers. Family-oriented culture with experienced coaches who keep the game fun while competing hard.",
+    description:
+      "Competitive 8U–14U program with a strong showing at USSSA qualifiers. Family-oriented culture with experienced coaches who keep the game fun while competing hard.",
     overallRating: 4.4,
     totalReviews: 36,
     ratings: {
@@ -333,7 +340,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Jericho, NY",
-    description: "Professional instruction meets travel ball. Next Level pairs elite coaching with a structured travel schedule designed to maximize exposure for college-bound players.",
+    description:
+      "Professional instruction meets travel ball. Next Level pairs elite coaching with a structured travel schedule designed to maximize exposure for college-bound players.",
     overallRating: 4.6,
     totalReviews: 52,
     ratings: {
@@ -363,7 +371,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Central Islip, NY",
-    description: "Formerly an Organization of the Year award winner. Jr. Ducks has a track record of college commits and a community-first approach rooted in Central Islip.",
+    description:
+      "Formerly an Organization of the Year award winner. Jr. Ducks has a track record of college commits and a community-first approach rooted in Central Islip.",
     overallRating: 4.5,
     totalReviews: 58,
     ratings: {
@@ -393,7 +402,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Massapequa, NY",
-    description: "Nassau County program with competitive 13U National and youth travel teams. Known for solid fundamentals coaching and good value relative to top-tier programs.",
+    description:
+      "Nassau County program with competitive 13U National and youth travel teams. Known for solid fundamentals coaching and good value relative to top-tier programs.",
     overallRating: 4.3,
     totalReviews: 41,
     ratings: {
@@ -423,7 +433,8 @@ const SAMPLE_PROGRAMS = [
     travel: "National Travel",
     priceTier: "$$$$ ($3000+/yr)",
     location: "Suffolk County, NY",
-    description: "Highly competitive Suffolk-based travel organization. Siege fields elite teams in national tournaments and has built a reputation for developing advanced baseball IQ.",
+    description:
+      "Highly competitive Suffolk-based travel organization. Siege fields elite teams in national tournaments and has built a reputation for developing advanced baseball IQ.",
     overallRating: 4.6,
     totalReviews: 33,
     ratings: {
@@ -453,7 +464,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Garden City, NY",
-    description: "Nassau County program running youth through college prep travel teams. Titans have a strong local reputation and consistent tournament performance across age groups.",
+    description:
+      "Nassau County program running youth through college prep travel teams. Titans have a strong local reputation and consistent tournament performance across age groups.",
     overallRating: 4.4,
     totalReviews: 49,
     ratings: {
@@ -483,7 +495,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Farmingdale, NY",
-    description: "Elite travel program out of Farmingdale with high USSSA rankings. Bandits are known for fielding disciplined, well-coached teams that compete deep into tournaments.",
+    description:
+      "Elite travel program out of Farmingdale with high USSSA rankings. Bandits are known for fielding disciplined, well-coached teams that compete deep into tournaments.",
     overallRating: 4.7,
     totalReviews: 29,
     ratings: {
@@ -513,7 +526,8 @@ const SAMPLE_PROGRAMS = [
     travel: "National Travel",
     priceTier: "$$$$ ($3000+/yr)",
     location: "Farmingdale, NY",
-    description: "Home of the Notorious 9 and Elite Academy. Team Francisco brings a high-intensity approach to player development with a national tournament footprint.",
+    description:
+      "Home of the Notorious 9 and Elite Academy. Team Francisco brings a high-intensity approach to player development with a national tournament footprint.",
     overallRating: 4.8,
     totalReviews: 37,
     ratings: {
@@ -543,7 +557,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$ (Under $500/yr)",
     location: "Floral Park, NY",
-    description: "An affordable travel alternative for Nassau families. FP Knights offer competitive 9U–14U teams without the premium price tag, making travel ball accessible to more families.",
+    description:
+      "An affordable travel alternative for Nassau families. FP Knights offer competitive 9U–14U teams without the premium price tag, making travel ball accessible to more families.",
     overallRating: 4.2,
     totalReviews: 44,
     ratings: {
@@ -573,7 +588,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Oyster Bay, NY",
-    description: "Gritty, hardworking culture that matches the name. Bulldogs focus on the North Shore 8U–13U market with a no-nonsense approach to development and competition.",
+    description:
+      "Gritty, hardworking culture that matches the name. Bulldogs focus on the North Shore 8U–13U market with a no-nonsense approach to development and competition.",
     overallRating: 4.4,
     totalReviews: 31,
     ratings: {
@@ -603,7 +619,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Ronkonkoma, NY",
-    description: "Sharks travel teams combined with year-round skills training at their Ronkonkoma facility. Strong reputation for developing pitchers and middle infielders.",
+    description:
+      "Sharks travel teams combined with year-round skills training at their Ronkonkoma facility. Strong reputation for developing pitchers and middle infielders.",
     overallRating: 4.5,
     totalReviews: 55,
     ratings: {
@@ -633,7 +650,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$ (Under $500/yr)",
     location: "Nassau County, NY",
-    description: "Youth and middle school travel program covering Nassau County. Gators are a great entry point for families new to travel baseball, with coaches who prioritize player enjoyment.",
+    description:
+      "Youth and middle school travel program covering Nassau County. Gators are a great entry point for families new to travel baseball, with coaches who prioritize player enjoyment.",
     overallRating: 4.2,
     totalReviews: 27,
     ratings: {
@@ -663,7 +681,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Islip, NY",
-    description: "South Shore staple serving the Islip and Sayville corridor. Chiefs run competitive travel teams with a community feel and coaches who have been with the program for years.",
+    description:
+      "South Shore staple serving the Islip and Sayville corridor. Chiefs run competitive travel teams with a community feel and coaches who have been with the program for years.",
     overallRating: 4.4,
     totalReviews: 39,
     ratings: {
@@ -695,7 +714,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Bethpage, NY",
-    description: "One of Long Island's most established travel softball programs. Strong college placement record with coaches who have direct ties to D1 and D2 recruiting coordinators.",
+    description:
+      "One of Long Island's most established travel softball programs. Strong college placement record with coaches who have direct ties to D1 and D2 recruiting coordinators.",
     overallRating: 4.7,
     totalReviews: 61,
     ratings: {
@@ -725,7 +745,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Commack, NY",
-    description: "Suffolk County program known for developing pitchers and catchers. Lightning has produced several D1 commits and runs structured tryouts with clear position evaluations.",
+    description:
+      "Suffolk County program known for developing pitchers and catchers. Lightning has produced several D1 commits and runs structured tryouts with clear position evaluations.",
     overallRating: 4.5,
     totalReviews: 48,
     ratings: {
@@ -757,7 +778,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Uniondale, NY",
-    description: "One of LI's premier soccer clubs with ECNL and NPL teams. LISC develops players from recreational into elite academy pathways with experienced UEFA-licensed coaches.",
+    description:
+      "One of LI's premier soccer clubs with ECNL and NPL teams. LISC develops players from recreational into elite academy pathways with experienced UEFA-licensed coaches.",
     overallRating: 4.6,
     totalReviews: 87,
     ratings: {
@@ -787,7 +809,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Albertson, NY",
-    description: "Long-running Nassau club with a reputation for player-centered coaching. Competes in LIJSL leagues and state cups with consistent success at mid-level competition.",
+    description:
+      "Long-running Nassau club with a reputation for player-centered coaching. Competes in LIJSL leagues and state cups with consistent success at mid-level competition.",
     overallRating: 4.4,
     totalReviews: 63,
     ratings: {
@@ -819,7 +842,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Syosset, NY",
-    description: "Competitive travel hockey out of Syosset Ice. Sharks develop players for high school and junior hockey with a structured practice-to-game ratio and experienced coaching staff.",
+    description:
+      "Competitive travel hockey out of Syosset Ice. Sharks develop players for high school and junior hockey with a structured practice-to-game ratio and experienced coaching staff.",
     overallRating: 4.5,
     totalReviews: 54,
     ratings: {
@@ -849,7 +873,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$$ ($3000+/yr)",
     location: "East Meadow, NY",
-    description: "Affiliated with the NY Islanders NHL organization. Elite development program for serious players targeting AAA competition and prep/junior hockey pathways.",
+    description:
+      "Affiliated with the NY Islanders NHL organization. Elite development program for serious players targeting AAA competition and prep/junior hockey pathways.",
     overallRating: 4.8,
     totalReviews: 42,
     ratings: {
@@ -881,7 +906,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Garden City, NY",
-    description: "Premier lacrosse club in Nassau County. Develops players through elite coaching and a structured club-to-high school transition program with strong college placement.",
+    description:
+      "Premier lacrosse club in Nassau County. Develops players through elite coaching and a structured club-to-high school transition program with strong college placement.",
     overallRating: 4.6,
     totalReviews: 71,
     ratings: {
@@ -911,7 +937,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Smithtown, NY",
-    description: "Girls lacrosse club serving the Suffolk County market with a strong recruiting pipeline. Runs fall and spring seasons with elite showcase exposure for college-bound athletes.",
+    description:
+      "Girls lacrosse club serving the Suffolk County market with a strong recruiting pipeline. Runs fall and spring seasons with elite showcase exposure for college-bound athletes.",
     overallRating: 4.5,
     totalReviews: 46,
     ratings: {
@@ -943,7 +970,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Uniondale, NY",
-    description: "AAU program known for developing guards and wings who go on to play high school varsity ball. Lightning runs fall and spring seasons with a strong local tournament circuit.",
+    description:
+      "AAU program known for developing guards and wings who go on to play high school varsity ball. Lightning runs fall and spring seasons with a strong local tournament circuit.",
     overallRating: 4.4,
     totalReviews: 57,
     ratings: {
@@ -975,7 +1003,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Hicksville, NY",
-    description: "One of Long Island's top competitive gymnastics programs. Gold Star coaches have Olympic trial experience and run a rigorous but supportive competitive track from beginner through Level 6.",
+    description:
+      "One of Long Island's top competitive gymnastics programs. Gold Star coaches have Olympic trial experience and run a rigorous but supportive competitive track from beginner through Level 6.",
     overallRating: 4.7,
     totalReviews: 64,
     ratings: {
@@ -1007,7 +1036,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$ ($500–$1500/yr)",
     location: "Melville, NY",
-    description: "Club volleyball program with a track record of placing players in college programs. LI Juniors competes in AAU and USAV circuits with multiple teams per age group.",
+    description:
+      "Club volleyball program with a track record of placing players in college programs. LI Juniors competes in AAU and USAV circuits with multiple teams per age group.",
     overallRating: 4.5,
     totalReviews: 53,
     ratings: {
@@ -1039,7 +1069,8 @@ const SAMPLE_PROGRAMS = [
     travel: "State Travel",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Hauppauge, NY",
-    description: "LIAC is one of Long Island's most decorated competitive swim clubs. Coaches develop athletes from age group through senior levels with a focus on technique and meet preparation.",
+    description:
+      "LIAC is one of Long Island's most decorated competitive swim clubs. Coaches develop athletes from age group through senior levels with a focus on technique and meet preparation.",
     overallRating: 4.8,
     totalReviews: 78,
     ratings: {
@@ -1071,7 +1102,8 @@ const SAMPLE_PROGRAMS = [
     travel: "Regional (1–2 hr)",
     priceTier: "$$$ ($1500–$3000/yr)",
     location: "Port Washington, NY",
-    description: "Junior tennis development with USTA-certified coaches. Runs individual and group training alongside USTA tournament prep with college placement guidance for serious players.",
+    description:
+      "Junior tennis development with USTA-certified coaches. Runs individual and group training alongside USTA tournament prep with college placement guidance for serious players.",
     overallRating: 4.6,
     totalReviews: 41,
     ratings: {
@@ -1728,7 +1760,8 @@ function ProgramCard({ program, onClick }) {
     </div>
   );
 }
-function ReviewCard({ review }) {
+function ReviewCard({ review }: { review: any }) {
+  const [helpful, setHelpful] = React.useState(review.helpful || 0);
   return (
     <div
       style={{
@@ -1807,7 +1840,17 @@ function ReviewCard({ review }) {
           })}
       </div>
       <div style={{ marginTop: 8, fontSize: 12, color: "#9CA3AF" }}>
-        👍 {review.helpful} found helpful
+        <span
+          onClick={() => setHelpful((h) => h + 1)}
+          style={{
+            cursor: "pointer",
+            userSelect: "none",
+            fontSize: 12,
+            color: "#9CA3AF",
+          }}
+        >
+          👍 {helpful} found helpful
+        </span>
       </div>
     </div>
   );
@@ -4000,6 +4043,7 @@ export default function App() {
     setToast(msg);
     setTimeout(() => setToast(null), 3000);
   };
+
   const handleReviewSubmit = (data) => {
     const newReview = {
       id: reviews.length + 1,
@@ -4101,18 +4145,20 @@ export default function App() {
           >
             <Logo />
           </button>
-          <div style={{ display: "flex", gap: 8 }}>
+
+          <div style={{ display: "flex", gap: 6 }}>
             <button
               onClick={() => setShowAddProgram(true)}
               style={{
-                padding: "7px 14px",
+                padding: "5px 10px",
                 border: "1.5px solid #1e3a5f",
-                borderRadius: 8,
+                borderRadius: 6,
                 background: "#fff",
                 color: "#1e3a5f",
-                fontSize: 13,
+                fontSize: 11,
                 fontWeight: 600,
                 cursor: "pointer",
+                whiteSpace: "nowrap",
               }}
             >
               + Add Program
@@ -4120,31 +4166,18 @@ export default function App() {
             <button
               onClick={() => setShowAddTrainer(true)}
               style={{
-                padding: "7px 14px",
+                padding: "5px 10px",
                 border: "1.5px solid #10B981",
-                borderRadius: 8,
+                borderRadius: 6,
                 background: "#fff",
                 color: "#10B981",
-                fontSize: 13,
+                fontSize: 11,
                 fontWeight: 600,
                 cursor: "pointer",
+                whiteSpace: "nowrap",
               }}
             >
               + List as Trainer
-            </button>
-            <button
-              style={{
-                padding: "7px 14px",
-                background: "#1e3a5f",
-                border: "none",
-                borderRadius: 8,
-                color: "#fff",
-                fontSize: 13,
-                fontWeight: 600,
-                cursor: "pointer",
-              }}
-            >
-              Advertise
             </button>
           </div>
         </div>
@@ -5084,7 +5117,20 @@ export default function App() {
         </div>
         <p style={{ fontSize: 12, color: "#9CA3AF" }}>
           Trophy · The trusted review platform for youth travel sports &
-          independent trainers · Advertise · List Your Club
+          independent trainers ·{" "}
+          <span
+            onClick={() => setView("advertise")}
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            Advertise
+          </span>{" "}
+          ·{" "}
+          <span
+            onClick={() => setShowAddProgram(true)}
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            List Your Club
+          </span>
         </p>
       </footer>
     </div>

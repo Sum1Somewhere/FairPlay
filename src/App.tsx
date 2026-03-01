@@ -2265,7 +2265,19 @@ function WriteReviewModal({ program, onClose, onSubmit }) {
   );
 }
 
-function ProgramDetail({ program, reviews, onBack, onReview }) {
+function ProgramDetail({
+  program,
+  reviews,
+  onBack,
+  onReview,
+  onDemo,
+}: {
+  program: any;
+  reviews: any[];
+  onBack: () => void;
+  onReview: () => void;
+  onDemo: () => void;
+}) {
   const [showAllRatings, setShowAllRatings] = useState(false);
   const programReviews = reviews.filter((r) => r.programId === program.id);
   const isPending = program.status === "pending";
@@ -2615,6 +2627,19 @@ function ProgramDetail({ program, reviews, onBack, onReview }) {
             <p style={{ fontSize: 13, color: "#6B7280", lineHeight: 1.6 }}>
               {program.description}
             </p>
+            {/* Contact & Social */}
+            <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
+              {["🌐", "📞", "📧", "📸", "👍"].map((icon) => (
+                <span
+                  key={icon}
+                  onClick={onDemo}
+                  style={{ fontSize: 18, cursor: "pointer", opacity: 0.4 }}
+                  title="Available when claimed"
+                >
+                  {icon}
+                </span>
+              ))}
+            </div>
             {program.tags?.length > 0 && (
               <div
                 style={{
@@ -4407,6 +4432,47 @@ export default function App() {
       )}
 
       <main style={{ maxWidth: 900, margin: "0 auto", padding: "24px 20px" }}>
+        {view === "demo" && (
+          <div style={{ textAlign: "center", padding: "80px 20px" }}>
+            <div style={{ fontSize: 48, marginBottom: 16 }}>🏆</div>
+            <h2
+              style={{
+                fontSize: 24,
+                fontWeight: 700,
+                color: "#1e3a5f",
+                marginBottom: 12,
+              }}
+            >
+              DEMO VERSION ONLY
+            </h2>
+            <p
+              style={{
+                fontSize: 14,
+                color: "#6B7280",
+                maxWidth: 320,
+                margin: "0 auto 24px",
+              }}
+            >
+              Contact info and social links will be available once programs are
+              claimed and verified.
+            </p>
+            <button
+              onClick={() => setView("programs")}
+              style={{
+                padding: "10px 24px",
+                background: "#1e3a5f",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                fontSize: 14,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              Back to Programs
+            </button>
+          </div>
+        )}{" "}
         {/* HOME — intent-first landing */}
         {view === "home" && (
           <div>
@@ -4414,15 +4480,16 @@ export default function App() {
             <div style={{ textAlign: "center", padding: "32px 0 28px" }}>
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 600,
-                  color: "#3B82F6",
-                  letterSpacing: 2,
+                  color: "#1F2A44",
+                  letterSpacing: "0.2em",
                   marginBottom: 10,
                   textTransform: "uppercase",
+                  opacity: 0.7,
                 }}
               >
-                Clubs. Travel Programs. Trainers. Development.
+                PROGRAMS · CLUBS · TRAINING
               </div>
               <h1
                 style={{
@@ -4434,9 +4501,9 @@ export default function App() {
                   marginBottom: 10,
                 }}
               >
-                THE SMARTER WAY TO
+                Find the Right Program
                 <br />
-                <span style={{ color: "#3B82F6" }}>Find the Right Program</span>
+                <span style={{ color: "#3B82F6" }}>Without the Guesswork</span>
               </h1>
               <p
                 style={{
@@ -4446,8 +4513,8 @@ export default function App() {
                   margin: "0 auto 28px",
                 }}
               >
-                Real parent reviews for youth travel teams and trainers — from
-                families who've been there.
+                Real parent reviews on clubs, travel teams, and trainers near
+                you.
               </p>
 
               {/* ── INTENT SPLIT ─────────────────────────────────────── */}
@@ -4806,7 +4873,6 @@ export default function App() {
             </div>
           </div>
         )}
-
         {/* UNIFIED RESULTS */}
         {view === "results" && (
           <div>
@@ -5083,7 +5149,6 @@ export default function App() {
             )}
           </div>
         )}
-
         {/* PROGRAM DETAIL */}
         {view === "detail" && selectedProgram && (
           <ProgramDetail
@@ -5094,9 +5159,9 @@ export default function App() {
               setSelectedProgram(null);
             }}
             onReview={() => setShowReviewModal(true)}
+            onDemo={() => setView("demo")}
           />
         )}
-
         {/* TRAINER DETAIL */}
         {view === "trainer-detail" && selectedTrainer && (
           <TrainerDetail

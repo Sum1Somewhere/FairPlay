@@ -4615,6 +4615,17 @@ export default function App() {
                 </button>
               </div>
             </div>
+            {/* Top searches label */}
+            <p
+              style={{
+                fontSize: 12,
+                color: "#9CA3AF",
+                marginBottom: 8,
+                textAlign: "center",
+              }}
+            >
+              Top Searches
+            </p>
 
             {/* Browse by sport — compact pill row */}
             <div
@@ -4630,10 +4641,10 @@ export default function App() {
                 ["⚾", "Baseball"],
                 ["⚽", "Soccer"],
                 ["🏀", "Basketball"],
+                ["🥎", "Softball"],
                 ["🥍", "Lacrosse"],
                 ["🏒", "Hockey"],
                 ["🏐", "Volleyball"],
-                ["🎾", "Tennis"],
                 ["🤸", "Gymnastics"],
               ].map(([icon, sport]) => (
                 <button

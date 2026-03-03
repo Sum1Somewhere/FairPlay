@@ -75,8 +75,8 @@ const RATING_CATEGORIES = [
 ];
 
 const YES_NO_CATEGORIES = [
-  { id: "tryout_required", label: "Tryout Required", icon: "📝" },
-  { id: "individual_tryout", label: "Individual Tryout Format", icon: "👤" },
+  { id: "tryout_required", label: "Private Training Offered", icon: "📝" },
+  { id: "individual_tryout", label: "One-on-One Tryout", icon: "👤" },
   { id: "facility_access", label: "Gym / Facility Access", icon: "🏋️" },
 ];
 

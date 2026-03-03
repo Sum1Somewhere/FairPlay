@@ -4787,6 +4787,271 @@ export default function App() {
             </button>
           </div>
         )}{" "}
+        {view === "about" && (
+          <div
+            style={{ maxWidth: 680, margin: "0 auto", padding: "40px 20px" }}
+          >
+            {/* Back */}
+            <button
+              onClick={() => setView("home")}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#6B7280",
+                fontSize: 13,
+                cursor: "pointer",
+                marginBottom: 32,
+                padding: 0,
+              }}
+            >
+              ← Back
+            </button>
+
+            {/* Header */}
+            <div style={{ marginBottom: 40 }}>
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#1F2A44",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  opacity: 0.7,
+                  marginBottom: 12,
+                }}
+              >
+                OUR STORY
+              </p>
+              <h1
+                style={{
+                  fontSize: 32,
+                  fontWeight: 800,
+                  color: "#1e3a5f",
+                  lineHeight: 1.2,
+                  marginBottom: 24,
+                }}
+              >
+                Travel sports is more than just a game.
+                <br />
+                <span style={{ color: "#3B82F6" }}>It's a lifestyle.</span>
+              </h1>
+            </div>
+
+            {/* Story */}
+            <div
+              style={{
+                borderLeft: "3px solid #3B82F6",
+                paddingLeft: 24,
+                marginBottom: 48,
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#374151",
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                }}
+              >
+                There are more programs than ever. More teams. More trainers.
+                More paths to choose from. For many families, it becomes part of
+                a player's progression - and a big part of your everyday life.
+                Its not just another season, but a conscious decision rooted in
+                commitment, time, money, and experience.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#374151",
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                }}
+              >
+                When my son aged out of Little League, he wanted to keep
+                playing. Many of his ex-teammates moved on, an were playing with
+                various local travel organizations. We hesitated. Honestly. we
+                stayed away from travel for a long time. It felt overwhelming.
+                Intimidating. Like there was a system everyone else understood
+                and we didn't.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#374151",
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                }}
+              >
+                In the end, he landed in a good spot. But over time, we met more
+                families who weren’t as sure. Different towns. Different sports.
+                Different experiences. We kept hearing the same thing: “I hear
+                they’re a good program… but are they right for us?” Have you
+                ever wondered that yourself? How much travel is too much? Will
+                they get meaningful playing time? Will they develop? Is it worth
+                the time and money?
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#374151",
+                  lineHeight: 1.8,
+                  marginBottom: 16,
+                }}
+              >
+                There are strong programs across every community. Every
+                organization has its own culture. Different expectations.
+                Different philosophies. What works for one family may not work
+                for another.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#374151",
+                  lineHeight: 1.8,
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                }}
+              >
+                The challenge isn't finding options. It's understanding them
+                before you commit.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "#1e3a5f",
+                  lineHeight: 1.8,
+                  fontWeight: 700,
+                  marginTop: 16,
+                }}
+              >
+                We built Trophy to make that part easier.
+              </p>
+            </div>
+
+            {/* Playbook */}
+            <div style={{ marginBottom: 48 }}>
+              <p
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#1F2A44",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  opacity: 0.7,
+                  marginBottom: 24,
+                }}
+              >
+                THE TROPHY PLAYBOOK
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                {[
+                  {
+                    icon: "🔭",
+                    title: "See the field clearly",
+                    desc: "Every program has its own style, culture, and standards. Before you commit, understand what you're stepping into.",
+                  },
+                  {
+                    icon: "🎯",
+                    title: "Fit over flash",
+                    desc: "There isn't one right path. There's the right environment for your player. Trophy helps families focus on fit, not hype.",
+                  },
+                  {
+                    icon: "🤝",
+                    title: "Respect the game",
+                    desc: "There are strong programs everywhere. This isn't about tearing anything down. It's about giving parents better perspective.",
+                  },
+                  {
+                    icon: "📈",
+                    title: "Play the long game",
+                    desc: "Travel sports is an investment of time, money, and trust. Make the decision with clarity.",
+                  },
+                  {
+                    icon: "🔒",
+                    title: "Transparency",
+                    desc: "If a program claims its listing or chooses to advertise, it's clearly labeled. Reviews are not bought or sold.",
+                  },
+                  {
+                    icon: "📍",
+                    title: "Built where it matters",
+                    desc: "Trophy starts in real communities, where these decisions actually happen. That's how trust is earned.",
+                  },
+                ].map(({ icon, title, desc }) => (
+                  <div
+                    key={title}
+                    style={{
+                      display: "flex",
+                      gap: 12,
+                      padding: "10px 0",
+                      borderBottom: "1px solid #F3F4F6",
+                    }}
+                  >
+                    <span style={{ fontSize: 22, flexShrink: 0 }}>{icon}</span>
+                    <div>
+                      <p
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 700,
+                          color: "#111827",
+                          marginBottom: 4,
+                        }}
+                      >
+                        {title}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: 13,
+                          color: "#6B7280",
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div
+              style={{
+                background: "#1e3a5f",
+                borderRadius: 16,
+                padding: 28,
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: "#fff",
+                  marginBottom: 8,
+                }}
+              >
+                If you've been through it, your review helps the next family.
+              </p>
+              <p style={{ fontSize: 13, color: "#93C5FD", marginBottom: 20 }}>
+                It takes 3 minutes. It makes a real difference.
+              </p>
+              <button
+                onClick={() => setView("programs")}
+                style={{
+                  padding: "10px 28px",
+                  background: "#3B82F6",
+                  border: "none",
+                  borderRadius: 8,
+                  color: "#fff",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Find a Program → Write a Review
+              </button>
+            </div>
+          </div>
+        )}
         {/* HOME — intent-first landing */}
         {view === "home" && (
           <div>
@@ -5470,7 +5735,6 @@ export default function App() {
             reviews={reviews}
             onBack={() => {
               setView("results");
-              setSelectedProgram(null);
             }}
             onReview={() => setShowReviewModal(true)}
             onDemo={() => setView("demo")}
@@ -5508,6 +5772,13 @@ export default function App() {
         <p style={{ fontSize: 12, color: "#9CA3AF" }}>
           Trophy · The trusted review platform for youth travel sports &
           independent trainers ·{" "}
+          <span
+            onClick={() => setView("about")}
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            About
+          </span>{" "}
+          ·{" "}
           <span
             onClick={() => setView("advertise")}
             style={{ cursor: "pointer", textDecoration: "underline" }}

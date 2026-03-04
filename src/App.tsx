@@ -4313,6 +4313,7 @@ export default function App() {
     search: "",
     showTrainers: true,
     showPrograms: true,
+    showCamps: true,
   });
   const [showAddProgram, setShowAddProgram] = useState(false);
   const [showAddTrainer, setShowAddTrainer] = useState(false);
@@ -4448,7 +4449,8 @@ export default function App() {
         />
       )}
 
-      {/* Header */}
+     {/* DEMO BANNER - change true to false to hide */}
+     {true && <div style={{ background: "#FEF08A", color: "#854D0E", textAlign: "center", padding: "10px", fontSize: 14, fontWeight: 600 }}>🚧 Demo Mode — Reviews shown are sample data only</div>} {/* Header */}
       <header
         style={{
           background: "#fff",
@@ -4855,8 +4857,8 @@ export default function App() {
               >
                 There are more programs than ever. More teams. More trainers.
                 More paths to choose from. For many families, it becomes part of
-                a player's progression - and a big part of your everyday life.
-                Its not just another season, but a conscious decision rooted in
+                a player’s progression. And a big part of your everyday life.
+                It’s not just another season. It’s a decision rooted in
                 commitment, time, money, and experience.
               </p>
               <p
@@ -4868,11 +4870,9 @@ export default function App() {
                 }}
               >
                 When my son aged out of Little League, he wanted to keep
-                playing. Many of his ex-teammates moved on, an were playing with
-                various local travel organizations. We hesitated. Honestly. we
-                stayed away from travel for a long time. It felt overwhelming.
-                Intimidating. Like there was a system everyone else understood
-                and we didn't.
+                playing. We hesitated. Honestly, we stayed away from travel for
+                a long time. It felt overwhelming. Intimidating. Like there was
+                a system everyone else understood and we didn't.
               </p>
               <p
                 style={{
@@ -4883,12 +4883,12 @@ export default function App() {
                 }}
               >
                 In the end, he landed in a good spot. But over time, we met more
-                families who weren’t as sure. Different towns. Different sports.
-                Different experiences. We kept hearing the same thing: “I hear
+                families who weren’t as sure. Different towns, different sports,
+                different experiences. We kept hearing the same thing: “I hear
                 they’re a good program… but are they right for us?” Have you
                 ever wondered that yourself? How much travel is too much? Will
-                they get meaningful playing time? Will they develop? Is it worth
-                the time and money?
+                they get meaningful playing time? Is it worth the time and
+                money?
               </p>
               <p
                 style={{
@@ -4899,9 +4899,7 @@ export default function App() {
                 }}
               >
                 There are strong programs across every community. Every
-                organization has its own culture. Different expectations.
-                Different philosophies. What works for one family may not work
-                for another.
+                organization has its own culture, expectations, and philosophy.
               </p>
               <p
                 style={{
@@ -5106,13 +5104,14 @@ export default function App() {
                   margin: "0 auto 32px",
                 }}
               >
-                {/* Program card */}
+                {/* Program card — big, full height */}
                 <button
                   onClick={() => {
                     setFilters((f) => ({
                       ...f,
                       showPrograms: true,
-                      showTrainers: false,
+                      showTrainers: true,
+                      showCamps: true,
                     }));
                     setView("results");
                   }}
@@ -5120,11 +5119,15 @@ export default function App() {
                     background: "#fff",
                     border: "1.5px solid #E5E7EB",
                     borderRadius: 14,
-                    padding: "16px 16px",
+                    padding: "24px 16px",
                     cursor: "pointer",
                     textAlign: "left",
                     transition: "all 0.2s",
                     boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+                    gridRow: "span 2",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = "#1e3a5f";
@@ -5139,32 +5142,33 @@ export default function App() {
                     e.currentTarget.style.transform = "none";
                   }}
                 >
-                  <div style={{ fontSize: 24, marginBottom: 8 }}>🏆</div>
+                  <div style={{ fontSize: 32, marginBottom: 12 }}>🏆</div>
                   <div
                     style={{
                       fontFamily: "'Bebas Neue', sans-serif",
-                      fontSize: 17,
+                      fontSize: 22,
                       color: "#1e3a5f",
                       letterSpacing: 1,
-                      marginBottom: 4,
+                      marginBottom: 8,
                     }}
                   >
                     FIND A PROGRAM
                   </div>
                   <div
-                    style={{ fontSize: 12, color: "#6B7280", lineHeight: 1.4 }}
+                    style={{ fontSize: 13, color: "#6B7280", lineHeight: 1.5 }}
                   >
                     Travel clubs and leagues — rated by real families.
                   </div>
                 </button>
 
-                {/* Trainer card */}
+                {/* Trainer card — small top right */}
                 <button
                   onClick={() => {
                     setFilters((f) => ({
                       ...f,
                       showPrograms: false,
                       showTrainers: true,
+                      showCamps: false,
                     }));
                     setView("results");
                   }}
@@ -5172,7 +5176,7 @@ export default function App() {
                     background: "#fff",
                     border: "1.5px solid #E5E7EB",
                     borderRadius: 14,
-                    padding: "16px 16px",
+                    padding: "14px 16px",
                     cursor: "pointer",
                     textAlign: "left",
                     transition: "all 0.2s",
@@ -5191,28 +5195,78 @@ export default function App() {
                     e.currentTarget.style.transform = "none";
                   }}
                 >
-                  <div style={{ fontSize: 24, marginBottom: 8 }}>🎯</div>
+                  <div style={{ fontSize: 20, marginBottom: 6 }}>🎯</div>
                   <div
                     style={{
                       fontFamily: "'Bebas Neue', sans-serif",
-                      fontSize: 17,
+                      fontSize: 15,
                       color: "#065F46",
                       letterSpacing: 1,
-                      marginBottom: 4,
+                      marginBottom: 3,
                     }}
                   >
                     FIND A TRAINER
                   </div>
-
                   <div
-                    style={{ fontSize: 12, color: "#6B7280", lineHeight: 1.4 }}
+                    style={{ fontSize: 11, color: "#6B7280", lineHeight: 1.4 }}
                   >
-                    Private, One-one-One, Groups, Specialists & Developmental
-                    Programs
+                    Private, 1-on-1, Groups & Specialists
+                  </div>
+                </button>
+
+                {/* Camps & Clinics card — small bottom right */}
+                <button
+                  onClick={() => {
+                    setFilters((f) => ({
+                      ...f,
+                      showPrograms: false,
+                      showTrainers: false,
+                      showCamps: true,
+                    }));
+                    setView("results");
+                  }}
+                  style={{
+                    background: "#fff",
+                    border: "1.5px solid #E5E7EB",
+                    borderRadius: 14,
+                    padding: "14px 16px",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "all 0.2s",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "#F59E0B";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 16px rgba(245,158,11,0.12)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "#E5E7EB";
+                    e.currentTarget.style.boxShadow =
+                      "0 1px 4px rgba(0,0,0,0.05)";
+                    e.currentTarget.style.transform = "none";
+                  }}
+                >
+                  <div style={{ fontSize: 20, marginBottom: 6 }}>⛺</div>
+                  <div
+                    style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 15,
+                      color: "#92400E",
+                      letterSpacing: 1,
+                      marginBottom: 3,
+                    }}
+                  >
+                    CAMPS & CLINICS
+                  </div>
+                  <div
+                    style={{ fontSize: 11, color: "#6B7280", lineHeight: 1.4 }}
+                  >
+                    Summer camps, skills clinics & development programs
                   </div>
                 </button>
               </div>
-
               {/* Quick search — secondary, not the hero */}
               <div
                 style={{
@@ -5230,6 +5284,7 @@ export default function App() {
                       search: e.target.value,
                       showPrograms: true,
                       showTrainers: true,
+                      showCamps: true,
                     }))
                   }
                   placeholder="Search by name, sport, or city..."
@@ -5770,28 +5825,41 @@ export default function App() {
           />
         </div>
         <p style={{ fontSize: 12, color: "#9CA3AF" }}>
-          Trophy · The trusted review platform for youth travel sports &
-          independent trainers ·{" "}
+          Trophy, The trusted review platform for youth travel sports &
+          independent trainers.{" "}
           <span
             onClick={() => setView("about")}
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             About
           </span>{" "}
-          ·{" "}
+          .{" "}
           <span
             onClick={() => setView("advertise")}
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Advertise
           </span>{" "}
-          ·{" "}
+          .{" "}
           <span
             onClick={() => setShowAddProgram(true)}
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             List Your Club
           </span>
+        </p>
+
+        <p style={{ fontSize: 12, color: "#9CA3AF", marginTop: 4 }}>
+          <a
+            href="mailto:BG.TrophyApp@gmail.com"
+            style={{
+              color: "#9CA3AF",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            Contact Us
+          </a>
         </p>
       </footer>
     </div>

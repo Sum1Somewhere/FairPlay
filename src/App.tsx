@@ -4450,7 +4450,7 @@ export default function App() {
       )}
 
      {/* DEMO BANNER - change true to false to hide */}
-     {true && <div style={{ background: "#FEF08A", color: "#854D0E", textAlign: "center", padding: "10px", fontSize: 14, fontWeight: 600 }}>🚧 Demo Mode — Reviews shown are sample data only</div>} {/* Header */}
+     {true && <div style={{ background: "#FEF08A", color: "#854D0E", textAlign: "center", padding: "10px", fontSize: 14, fontWeight: 600 }}>🚧 Preview Mode — All reviews are mock data for testing </div>} {/* Header */}
       <header
         style={{
           background: "#fff",
